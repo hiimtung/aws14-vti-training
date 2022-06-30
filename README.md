@@ -12,3 +12,15 @@
    - Review code       : terraform plan 
    - Launch            : terraform apply -auto-approve 
    - Destroy           : terraform destroy -auto-approve 
+5. Folder structure :
+  - aws14-terraform
+     - main.tf
+     - module
+        - Ec2
+           - main.tf
+           - varriables.tf
+           - outputs.tf
+        - Networking
+           - main.tf
+           - varriables.tf
+           - outputs.tf
