@@ -17,5 +17,5 @@ module "ec2_sg" {
   name          = "${var.name}-sg"
   version       = "0.1.0"
   vpc_id        = module.vpc.vpc_id
-  ingress_rules = var.ingress_rules #Allow all traffic to http from anywhere 
+  ingress_rules = var.ingress_rules 
 }
