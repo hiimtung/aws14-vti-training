@@ -25,7 +25,7 @@ fi
 read -p "Enter IAM User: " IAM_USER
 read -p "Enter MFA token: " MFA_CODE
 MFA_DEVICE_ARN="arn:aws:iam::<VTIA AccountID>:mfa/$IAM_USER"
-cmd=$(aws sts get-session-token --profile VTIA \
+cmd=$(aws sts get-session-token \
     --serial-number $MFA_DEVICE_ARN \
     --token-code $MFA_CODE | jq '.Credentials')
 check=$(echo $cmd | jq -r '.AccessKeyId')
