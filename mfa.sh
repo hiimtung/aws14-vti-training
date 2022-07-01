@@ -17,14 +17,14 @@ fi
 # This will used when using zsh
 # vared -p 'Please enter IAM User: ' -c IAM_USER
 # echo "You entered $IAM_USER"
-# MFA_DEVICE_ARN="arn:aws:iam::613589781924:mfa/$IAM_USER"
+# MFA_DEVICE_ARN="arn:aws:iam::<VTIA AccountID>:mfa/$IAM_USER"
 # echo "Your MFA ARN: $MFA_DEVICE_ARN"
 # vared -p 'Please enter MFA code: ' -c MFA_CODE
 # echo "You entered $MFA_CODE"
 
 read -p "Enter IAM User: " IAM_USER
 read -p "Enter MFA token: " MFA_CODE
-MFA_DEVICE_ARN="arn:aws:iam::613589781924:mfa/$IAM_USER"
+MFA_DEVICE_ARN="arn:aws:iam::<VTIA AccountID>:mfa/$IAM_USER"
 cmd=$(aws sts get-session-token --profile VTIA \
     --serial-number $MFA_DEVICE_ARN \
     --token-code $MFA_CODE | jq '.Credentials')
