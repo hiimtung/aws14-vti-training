@@ -1,6 +1,6 @@
 provider "aws" {
   region = "ap-southeast-1" #Change region here
-  # profile = "tf"
+  # profile = "tf" #Uncomment if using with a VTI iam user
 }
 #Create VPC
 module "networking" {
